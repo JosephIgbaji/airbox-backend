@@ -22,6 +22,7 @@ app.use(
     origin: "https://airboxng.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary methods
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
