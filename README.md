@@ -16,7 +16,7 @@ This is the backend for the Airbox Scheduling & Dashboard application. It provid
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/airbox-backend.git
+   git clone https://github.com/JosephIgbaji/airbox-backend
    cd airbox-backend
    ```
 2. Install dependencies:
@@ -47,6 +47,10 @@ This is the backend for the Airbox Scheduling & Dashboard application. It provid
    ```
 
 ## API Endpoints
+
+## LIVE URL
+
+- https://airbox-backend.vercel.app/
 
 ### Authentication
 
