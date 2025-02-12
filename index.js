@@ -12,6 +12,19 @@ dotenv.config();
 const app = express();
 
 // Middleware
+app.use((req, res, next) => {
+  res.setHeader("Referrer-Policy", "no-referrer");
+  next();
+});
+
+app.use(
+  cors({
+    origin: "https://airboxng.vercel.app/",
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow necessary methods
+    credentials: true,
+  })
+);
+
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
