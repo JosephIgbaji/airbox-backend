@@ -10,6 +10,9 @@ export const getMetrics = async (req, res) => {
 
     const totalBookingPerMonth = await Booking.aggregate([
       {
+        $match: { userId: req.user.userId }, // Filter by "confirmed" status
+      },
+      {
         $project: {
           year: { $year: "$date" }, // Extract year from date
           month: { $month: "$date" }, // Extract month from date
@@ -53,7 +56,7 @@ export const getMetrics = async (req, res) => {
 
     const revenue = await Booking.aggregate([
       {
-        $match: { status: "confirmed" }, // Filter by "confirmed" status
+        $match: { status: "confirmed", userId: req.user.userId }, // Filter by "confirmed" status
       },
       {
         $project: {
