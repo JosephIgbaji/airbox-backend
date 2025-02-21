@@ -37,6 +37,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/metrics", metricsRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).send("Airbox Backend API");
+});
+
 // Database Connection
 mongoose
   .connect(process.env.MONGO_URI, {
